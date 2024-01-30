@@ -1,0 +1,10 @@
+/* Define a fonte personalizada chamada */
+@font-face {
+    font-family: 'Oswald'; 
+    src: url('../fontes/Oswald-Light.ttf'); 
+}
+
+/* Aplica a fonte 'Oswald' a todos os elementos na página */
+* {
+    font-family: 'Oswald'; 
+}

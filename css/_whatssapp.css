@@ -1,0 +1,53 @@
+/* Estiliza o link (âncora) flutuante */
+a {
+    position: fixed; 
+    bottom: 24px; 
+    right: 35px; 
+    z-index: 99; 
+    transition: transform 0.4s;
+    transform: scale(1.0);     
+}
+
+/* Quando o mause esta sobre link, aumenta a escala para dar um efeito de destaque */
+a:hover {
+    transform: scale(1.1);
+}
+
+/* Limita a largura máxima da imagem dentro do link */
+a img {
+    max-width: 64px;
+    transform: scale(0);
+    animation: escala 0.4s ease-out 4s forwards;
+}
+
+/* Define a animação de escala */
+@keyframes escala {
+    from {
+        transform: scale(0); 
+    }
+    to {
+        transform: scale(1.0);
+    }
+}
+
+/* Define estilos para a caixa de texto que aparece ao lado do link */
+a span {
+    position: absolute; 
+    visibility: hidden; 
+    background-color: white; 
+    color: black; 
+    border-radius: 20px; 
+    padding: 1px; 
+    text-align: center; 
+    width: 170px; 
+    top: 20px; 
+    left: -185px; 
+    transition: opacity 0.3s;
+    opacity: 0; 
+}
+
+/* Quando o mause esta sobre link, a caixa de texto torna-se visível */
+a:hover span {
+    visibility: visible;
+    opacity: 1;
+}

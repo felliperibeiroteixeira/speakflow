@@ -1,0 +1,5 @@
+/* Define regras para todos os elementos na página */
+* {
+    margin: 0; 
+    padding: 0; 
+}

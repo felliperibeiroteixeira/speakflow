@@ -1,0 +1,229 @@
+/* Estilos gerais */
+.conteudo {
+    display: flex;
+    align-items: center;
+    gap: 100px;     
+}
+
+/* Define o tamanho da fonte para o titulo */
+h1 {
+    font-size: 50px;
+}
+
+/* Define a cor padrão do texto para a pagina e o botão */
+body, button {
+    color: white;
+}
+
+/* Cabeçalho */
+header {
+    height: 100vh;   
+}
+
+header::before {
+    content: '';
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url("../img/logo.jpeg");    
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: 40%;  
+}
+
+header div {
+    position: absolute;
+    text-align: right;
+    right: 400px;
+    animation: X 1s ease-out 1s forwards;
+    opacity: 0;
+}
+
+/* Animação do cabeçalho */
+@keyframes X {
+    from {
+        opacity: 0;
+        transform: translateX(-200px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Estiliza as palavras-chave em vermelho nos títulos */
+h1 span, h2 span {
+    color: red;
+}
+
+/* Estiliza a linha horizontal */
+hr {
+    border: 1px solid white;
+    margin: 20px 0;
+    width: 50%;
+    margin-left: auto;
+}
+
+/* Estiliza o botão com transição de escala ao passar o mouse */
+button {
+    cursor: pointer;
+    margin-top: 20px;
+    padding: 10px 60px;
+    border: none;
+    border-radius: 10px 60px;
+    background: linear-gradient(to left, #ff6f00, #ffaa00);   
+    font-size: 16px;
+    transition: transform 0.3s ease-in-out; 
+}
+
+button:hover {
+    background: linear-gradient(to left, #ffaa00, #ff6f00);
+    transform: scale(1.1);   
+}
+
+/* Define o alinhamento central e o preenchimento para as seções e o rodapé */
+section, footer {
+    justify-content: center;
+    padding: 34px;    
+}
+
+/* Estilos da seção sobre */
+#sobre {
+    background-color: #1c2430;
+}
+
+article {
+    margin: 50px 0;
+}
+
+article p {
+    margin-top: 30px;
+    font-size: 20px;
+}
+
+/* Estiliza as imagens e o slide */
+img {
+    width: 100%;
+}
+
+#slide, #material div img {
+    border-radius: 20px;
+}
+
+/* Esconde o slide e as imagens da galeria */
+.esconder {
+    opacity: 0;
+    transition: all 2s;
+}
+
+/* Mostra o slide e as imagens da galeria */
+.mostrar {
+    opacity: 1;
+    transition: all 2s ease-out 3s forwards;
+}
+
+/* Estilos da seção enderço */
+#endereço {       
+    background-color: #4f0101;         
+}
+
+#slide {
+    height: 900px;
+    width: 700px;
+    overflow: hidden;    
+}
+
+#slide img {  
+    animation: tranzição-zoom 3s linear infinite;
+}
+
+/* Tranzição das imagens do slide */
+@keyframes tranzição-zoom {
+    0% {
+        transform: scale(1.3);
+    }
+    15% {
+        transform: scale(1);
+    }
+    85% {
+        transform: scale(1);   
+    }
+    100% {
+        transform: scale(1.3);   
+    }
+}
+
+/* Centraliza texto da seção material e rodapé */
+#material, footer {
+    text-align: center;    
+}
+
+/* Estilos da seção material */
+#material { 
+    background-color: #111212;    
+}
+
+#material div img {
+    margin-top: 100px;     
+}
+
+footer {
+    background-color: #ff6f00;
+}
+
+/* Estilos para dispositivos móveis */
+@media screen and (max-width: 768px) {
+    /* Cabeçalho  */
+    header {
+        justify-content: center;  
+    }
+
+    header div {
+        text-align: center;
+        right: auto;
+        bottom: 100px;
+        animation: Y 1s ease-out 1s forwards;
+    }
+
+    hr {
+        width: 100%;    
+    }
+
+    @keyframes Y {
+        from {
+            opacity: 0;
+            transform: translateY(50px);
+        } to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    /* Estilos da seção sobre */
+    article h2 {
+        font-size: 17px;    
+    }
+
+    article p {
+        font-size: 16px;
+    }
+
+    /* Estilisa as seções enderço e material */
+    #endereço, #material div {
+        display: block;
+        padding: 0;     
+    }
+
+    #endereço h2 {
+        font-size: 16px;
+        text-align: center;
+    }
+
+    #slide {
+        height: auto;
+        width: auto;
+        border-radius: 0; 
+    }
+
+    #texto {
+        padding: 20px;
+    } 
+}
